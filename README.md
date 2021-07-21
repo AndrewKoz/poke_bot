@@ -1,6 +1,8 @@
 # poke_bot
 Simple telegram bot, which allows you to play Pokemon Quiz
 
+Видео-демонстрация работы бота: https://drive.google.com/file/d/1vSbXwbv-mYEX46-LSK0ZXxkpJb9OgP7o/view?usp=sharing
+
 С помощью данного телеграм-бота можно поиграть в викторину по покемонам. Почти как в сериале, только картинки не чёрные. 
 Как запустить бота: 
 1) Установить все необходимые библиотеки (есть в requirements.txt).
