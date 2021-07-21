@@ -1,0 +1,17 @@
+chardet==4.0.0
+cssselect2==0.4.1
+defusedxml==0.7.1
+gforms==0.8.1
+idna==2.10
+lxml==4.6.3
+pycparser==2.20
+pyTelegramBotAPI==3.8.1
+pyvips==2.1.15
+reportlab==3.5.68
+requests==2.25.1
+soupsieve==2.2.1
+svg2rlg==0.3
+svglib==1.1.0
+tinycss2==1.1.0
+urllib3==1.26.4
+webencodings==0.5.1
