@@ -39,13 +39,11 @@ def game(message):
     pokemon_id = rand_nums[0]
     url = "http://pokeapi.co/api/v2/pokemon/{}/".format(pokemon_id)
 
-    print("url = ", url)
     res = requests.get(url)
     data = res.json()
 
     # Находим имя и изображение первого покемона
     img_url = data["sprites"]["other"]["dream_world"]["front_default"]
-    print("img_url = ", img_url)
     pokemon_name = data["name"].capitalize()
 
     # Преобразуем изображение из SVG в PNG
@@ -55,7 +53,7 @@ def game(message):
     file.close()
 
     drawing = svg2rlg("pokemon.svg")
-    renderPM.drawToFile(drawing, 'pokemon.png', fmt='PNG')
+    renderPM.drawToFile(drawing, "pokemon.png", fmt="PNG")
 
     # Отпрааляем изображение и вопрос: это что за покемон?
     bot.send_photo(message.from_user.id,
@@ -74,7 +72,7 @@ def game(message):
 
 
 # Обработчик всех текстовых сообщений от пользователя
-@bot.message_handler(func=lambda message: True, content_types=['text'])
+@bot.message_handler(func=lambda message: True, content_types=["text"])
 def check_answer(message):
     global playing
     # pokemon_name - это ожидаемый ответ
@@ -82,11 +80,11 @@ def check_answer(message):
     # Если человек играет, то расцениваем его сообщение как ответ,
     # если же не играет, предлагаем начать игру
     if not playing:
-        bot.send_message(message.chat.id, 'Чтобы начать игру, введите команду /game')
+        bot.send_message(message.chat.id, "Чтобы начать игру, введите команду /game")
     else:
         # Верный ответ
         if message.text == pokemon_name:
-            bot.send_message(message.chat.id, 'Верно!', reply_markup=types.ReplyKeyboardRemove())
+            bot.send_message(message.chat.id, "Правильно!", reply_markup=types.ReplyKeyboardRemove())
         # Неверный ответ
         else:
             bot.send_message(message.chat.id, "Нет, это " + pokemon_name + "!",
